@@ -18,18 +18,18 @@ class ContactRepository(application: Application){
     }
 
     fun getAllContacts(): LiveData<List<Contact>>{
-        return listLiveData;
+        return listLiveData
     }
 
     fun insert(contact: Contact){
-        insertAsyncTask(contactDao).execute(contact)
+        InsertAsyncTask(contactDao).execute(contact)
     }
 
     fun deleteAll(){
-        deleteAsyncTask(contactDao).execute()
+        DeleteAsyncTask(contactDao).execute()
     }
 
-    private class insertAsyncTask
+    private class InsertAsyncTask
         internal constructor(private val mAsyncContactDAO: ContactDAO) : AsyncTask<Contact, Void, Void>() {
 
         override fun doInBackground(vararg params: Contact): Void? {
@@ -37,7 +37,7 @@ class ContactRepository(application: Application){
             return null
         }
     }
-    private class deleteAsyncTask
+    private class DeleteAsyncTask
         internal constructor(private val mAsyncContactDAO: ContactDAO) :AsyncTask<Void,Void,Void>(){
 
         override fun doInBackground(vararg p0: Void?): Void? {

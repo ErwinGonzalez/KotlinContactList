@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.work.Data
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
@@ -21,7 +20,7 @@ import com.galileo.micromasterandroid.kotlincontactlist.R
 import com.galileo.micromasterandroid.kotlincontactlist.Workers.NotificationWorker
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), ContactRecyclerViewAdapter.onClickCallback {
+class MainActivity : AppCompatActivity(), ContactRecyclerViewAdapter.OnClickCallback {
 
     val NEW_CONTACT_REQUEST = 1001
     var contactViewModel: ContactViewModel?=null

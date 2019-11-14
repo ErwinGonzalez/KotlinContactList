@@ -11,11 +11,11 @@ import com.galileo.micromasterandroid.kotlincontactlist.DataModels.Contact
 import com.galileo.micromasterandroid.kotlincontactlist.R
 
 class ContactRecyclerViewAdapter
-        internal constructor(context : Context, callback:onClickCallback):RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactListViewHolder>(){
+        internal constructor(context : Context, callback:OnClickCallback):RecyclerView.Adapter<ContactRecyclerViewAdapter.ContactListViewHolder>(){
 
     private val inflater : LayoutInflater
     private var contactList: List<Contact>? = null
-    private var clickCallback: onClickCallback? = null
+    private var clickCallback: OnClickCallback? = null
 
     init{
         inflater = LayoutInflater.from(context)
@@ -64,7 +64,7 @@ class ContactRecyclerViewAdapter
         }
 
     }
-    interface onClickCallback{
+    interface OnClickCallback{
         fun handleClick(position: Int)
     }
 }
